@@ -10,7 +10,7 @@ function LunchCheckController($scope)  {
   $scope.placeholder_msg =  "list comma separated dishes you usually have for lunch!";
 
   $scope.cheButtonControl = function () {
-        console.log($scope.dishes);
+        //console.log($scope.dishes);
 
         if ($scope.dishes == "" || $scope.dishes == null ) {
            $scope.MessagetoUser = "Please enter data first";
