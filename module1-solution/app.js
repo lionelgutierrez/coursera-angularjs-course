@@ -17,7 +17,7 @@ function LunchCheckController($scope)  {
         }
         else{
             var cont = ParseItems($scope.dishes);
-            console.log(cont);
+            //console.log(cont);
             if (cont > 3) {
                $scope.MessagetoUser = "Too much!";
             }
