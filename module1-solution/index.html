@@ -4,6 +4,7 @@
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles\estilos.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
@@ -18,12 +19,13 @@
              <input id="lunch-menu" type="text"
              ng-model="dishes"
              placeholder={{placeholder_msg}}
-             class="form-control">
+             class="form-control {{specialClassBoder}}"
+             >
          </div>
          <div class="form-group">
              <button ng-click="cheButtonControl()" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="form-group message {{specialClass}}">
             {{MessagetoUser}}
          </div>
    </div>

@@ -1,0 +1,20 @@
+.redCase
+{
+  color: #FF0000;
+}
+
+.greenCase
+{
+  color: #3c763d;
+
+}
+
+.redBorder
+{
+  border-color:#FF0000;
+}
+
+.greenBorder
+{
+  border-color:#3c763d;
+}

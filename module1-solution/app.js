@@ -13,9 +13,13 @@ function LunchCheckController($scope)  {
         //console.log($scope.dishes);
 
         if ($scope.dishes == "" || $scope.dishes == null ) {
+           $scope.specialClass = "redCase";
+           $scope.specialClassBoder ="redBorder";
            $scope.MessagetoUser = "Please enter data first";
         }
         else{
+            $scope.specialClassBoder ="greenBorder";
+            $scope.specialClass = "greenCase";
             var cont = ParseItems($scope.dishes);
             //console.log(cont);
             if (cont > 3) {
