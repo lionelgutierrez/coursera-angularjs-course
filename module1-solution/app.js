@@ -7,7 +7,7 @@ angular.module("LunchCheck", [])
 LunchCheckController.$inject = ["$scope"];
 function LunchCheckController($scope)  {
 
-  $scope.placeholder_msg =  "list comma separated dishes you usually have for lunch!";
+  $scope.placeholder_msg =  "list comma separated dishes you usually have for lunch(NOT consider and empty item, i.e., , , as an item towards to the count)";
 
   $scope.cheButtonControl = function () {
         //console.log($scope.dishes);
@@ -21,7 +21,7 @@ function LunchCheckController($scope)  {
             $scope.specialClassBoder ="greenBorder";
             $scope.specialClass = "greenCase";
             var cont = ParseItems($scope.dishes);
-            //console.log(cont);
+            console.log(cont);
             if (cont > 3) {
                $scope.MessagetoUser = "Too much!";
             }
@@ -34,7 +34,9 @@ function LunchCheckController($scope)  {
 
   function ParseItems(message) {
      var arrayOfStrings = message.split(",");
-      return arrayOfStrings.length;
+     //Deleting empty items (comma with no text)
+     arrayOfStrings = arrayOfStrings.filter(function(n){ return n != "" });
+     return arrayOfStrings.length;
   };
 
 }
