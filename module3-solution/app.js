@@ -52,7 +52,7 @@ function MenuSearchService($http,ApiEndPoint){
                   //console.log(array.menu_items.length);
                   //search in response for items with searTerm
                   //console.log(searchTerm.toLowerCase());
-                  if (array.menu_items != undefined) {
+                  if (array != undefined) {
                       for (var i = 0; i < array.menu_items.length; i++) {
                           var name = array.menu_items[i].short_name;
                           //console.log(name);
