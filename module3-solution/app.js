@@ -54,10 +54,10 @@ function MenuSearchService($http,ApiEndPoint){
                   //console.log(searchTerm.toLowerCase());
                   if (array != undefined) {
                       for (var i = 0; i < array.menu_items.length; i++) {
-                          var name = array.menu_items[i].short_name;
+                          var descrip = array.menu_items[i].description;
                           //console.log(name);
 
-                          if (name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+                          if (descrip.indexOf(searchTerm) !== -1) {
                               found.push(array.menu_items[i]);
                           }
                       }
