@@ -52,12 +52,14 @@ function MenuSearchService($http,ApiEndPoint){
                   //console.log(array.menu_items.length);
                   //search in response for items with searTerm
                   //console.log(searchTerm.toLowerCase());
-                  for (var i = 0; i < array.menu_items.length; i++) {
-                      var name = array.menu_items[i].short_name;
-                      //console.log(name);
+                  if (array.menu_items != undefined) {
+                      for (var i = 0; i < array.menu_items.length; i++) {
+                          var name = array.menu_items[i].short_name;
+                          //console.log(name);
 
-                      if (name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
-                          found.push(array.menu_items[i]);
+                          if (name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+                              found.push(array.menu_items[i]);
+                          }
                       }
                   }
 
@@ -89,7 +91,13 @@ function foundItemsDirectiveController(){
     var list = this;
 
     list.emptyList = function () {
-        return (list.items.length == 0 && list.items != undefined);
+        if (list.items == undefined){
+           return false;
+        }
+        else{
+           return (list.items.length == 0);//list.items != undefined &&
+        }
+
     };
 };
 
