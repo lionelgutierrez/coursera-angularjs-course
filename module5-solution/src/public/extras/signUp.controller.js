@@ -7,6 +7,7 @@ angular.module('public')
 signUpController.$inject = ['MenuService','UserInfoService']
 function signUpController(MenuService,UserInfoService)  {
   var signUpCtrl = this;
+  signUpCtrl.user = UserInfoService.getUserInformation();
   signUpCtrl.msjError = false;
   signUpCtrl.msjOK = false;
   signUpCtrl.submit = function() {
