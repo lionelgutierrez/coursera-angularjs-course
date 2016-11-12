@@ -16,6 +16,8 @@ function signUpController(MenuService,UserInfoService)  {
                 if (response.length === 0)
                 {
                   signUpCtrl.msjError = true;
+                  var errorUser= {firstname: '', lastname: '', email: '', phone: '', favorite: ''};
+                  UserInfoService.SaveInformation(errorUser);
                 }
                 else {
                   signUpCtrl.msjOK = true;
